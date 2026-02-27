@@ -1,86 +1,80 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    height: 100vh;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
     text-align: center;
-    max-width: 500px;
-    width: 100%;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.tagline {
-    color: #666;
+/* Search Section */
+.search-section {
     margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
     font-size: 1rem;
+    outline: none;
 }
 
+#city-input:focus {
+    border-color: #4facfe;
+}
+
+#search-btn {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#search-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Weather Display */
 #weather-display {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.loading {
-    color: #667eea;
-    font-size: 1.1rem;
+/* Error Message */
+.error-message {
+    background: #ffe5e5;
+    color: #cc0000;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid red;
 }
 
-.weather-info {
-    animation: fadeIn 0.5s ease-in;
+/* Loading Spinner */
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4facfe;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.city-name {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.temperature {
-    font-size: 3.5rem;
-    color: #667eea;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.description {
-    font-size: 1.3rem;
-    color: #555;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-}
-
-.weather-icon {
-    width: 100px;
-    height: 100px;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

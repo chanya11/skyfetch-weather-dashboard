@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <title>SkyFetch Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
-<div class="container">
-    <h1>🌤 SkyFetch Weather</h1>
+    <div class="container">
+        <h1>SkyFetch Weather Dashboard</h1>
 
-    <!-- Search Section -->
-    <div class="search-section">
-        <input type="text" id="city-input" placeholder="Enter city name..." />
-        <button id="search-btn">🔍 Search</button>
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Recent Searches Section -->
+        <div class="recent-section">
+            <div class="recent-header">
+                <h3>Recent Searches</h3>
+                <button id="clearHistoryBtn" class="clear-btn">Clear</button>
+            </div>
+            <div id="recentSearches" class="recent-container"></div>
+        </div>
+
+        <!-- Weather Display -->
+        <div id="weatherDisplay"></div>
+
+        <!-- Forecast Section -->
+        <div id="forecastContainer" class="forecast-grid"></div>
+
     </div>
 
-    <!-- Weather Display -->
-    <div id="weather-display">
-        <p>Search for a city to see the weather 🌍</p>
-    </div>
-</div>
-
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,80 +1,47 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    width: 400px;
-    text-align: center;
-}
-
-/* Search Section */
-.search-section {
-    margin-bottom: 30px;
-    display: flex;
-    gap: 10px;
-}
-
-#city-input {
-    flex: 1;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 2px solid #ddd;
-    font-size: 1rem;
-    outline: none;
-}
-
-#city-input:focus {
-    border-color: #4facfe;
-}
-
-#search-btn {
-    padding: 12px 20px;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-#search-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Weather Display */
-#weather-display {
+/* Forecast Section */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
     margin-top: 20px;
 }
 
-/* Error Message */
-.error-message {
-    background: #ffe5e5;
-    color: #cc0000;
+.forecast-card {
+    background: #ffffff;
     padding: 15px;
-    border-radius: 10px;
-    border-left: 5px solid red;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Loading Spinner */
+.forecast-card:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-card img {
+    width: 60px;
+}
+
+.loading-container {
+    text-align: center;
+}
+
 .spinner {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #4facfe;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 20px auto;
+    border: 4px solid #ddd;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
     animation: spin 1s linear infinite;
+    margin: auto;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    text-align: center;
+    color: red;
 }
